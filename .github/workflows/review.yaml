@@ -1,0 +1,36 @@
+﻿name: Run review proccess
+on:
+  workflow_dispatch:
+    inputs:
+      verbose_level:
+        type: choice
+        description: Verbose level to use for tests. Default is basic.
+        default: "1"
+        options:
+          - "0"
+          - "1"
+          - "2"
+          - "3"
+          - "4"
+  pull_request:
+    branches: [main]
+
+jobs:
+  review:
+    name: Review s-mips.circ
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+      - name: Install logisim
+        run: sudo apt-get install -y logisim
+      - name: Check S-MIPS price
+        run: python price.py s-mips.circ S-MIPS --limit 100
+      - name: Run S-MIPS tests
+        run: python test.py tests s-mips.circ -o tests-out -t s-mips-template.circ -v ${VERBOSE:-1}
+        env:
+          VERBOSE: ${{ github.event.inputs.verbose }}
