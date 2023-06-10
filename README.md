@@ -35,7 +35,7 @@ El proyecto también incluye un conjunto de scripts en Python que permitirán re
 Para poder ejecutar estos tests automáticos es necesario contar con los siguientes requisitos:
 
 * Sistema Operativo Unix
-* Python 3 instalado y accesible desde el comando `python3`
+* Python 3 instalado y accesible desde el comando ``
 * Logisim instalado y accesible desde el comando `logisim`
 
 ### Pasos para ejecución
