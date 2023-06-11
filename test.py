@@ -20,8 +20,8 @@ class TestCase:
         self,
         test_name: str,
         file: str,
-        expected_result: str | None,
-        expected_speed: int | None = None,
+        expected_result:# str | None,
+        expected_speed:# int | None = None,
     ):
         self.file = file
         self.expected_result = expected_result
