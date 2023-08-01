@@ -1,18 +1,7 @@
-# Orientación Proyecto AC
+# Proyecto AC
 
-## Materiales
 
-Para la realización del proyecto se entregan junto con este informe los siguientes materiales:
-
-* Este documento (`README.md`)
-* `smips.pdf`
-* Scripts de Python para el testeo automático(`asambler.py`, `test.py` y `price.py`)
-* Dos archivos punto circ `s-mips-template.circ` y `s-mips.circ`.
-* Carpeta `tests` conteniendo diferentes archivos `.asm`
-
-## Orientación
-
-El objetivo de este proyecto es que puedan implementar usando `Logisim` una arquitectura para interpretar las instrucciones de S-MIPS. Los detalles relacionados a esta implementación estan descritos en el archivo [`s-mips.pdf`](./s-mips.pdf).
+El objetivo de este proyecto es implementar usando `Logisim` una arquitectura para interpretar las instrucciones de S-MIPS. Los detalles relacionados a esta implementación estan descritos en el archivo [`s-mips.pdf`](./s-mips.pdf).
 
 ## Estructura de la plantilla
 
@@ -71,20 +60,3 @@ Para aquellos casos en los que se desee hacer un ejecución manual de uno de los
 
 6- Conmutar el reloj. Si todos los pasos fueron seguidos de forma correcta el microprocesador deberá empezar a ejecutar las instrucciones almacenadas ahora en la RAM.
 
-## Detalles de la evaluación
-
-La entrega de dicho proyecto se realizará pasados 15 días a partir del próximo martes 6 de diciembre. La entrega consistirá de un archivo `zip` con el siguiente formato de nombre `<Nombre-de-Estudiante>-C<Grupo>.zip`. El archivo debe contener el `s-mips.circ` y el resto de los archivos entregados. Esta carpeta consta de un repositorio git local el cuál el estudiante debe usar para llevar constancia del trabajo realizado. Debe realizarce al menos un commit por cada componente implementada. Evitar por todos los medios crear un único commit al final con todos los cambios del proyecto.
-
-### Requisitos
-
-Para considerar un microprocesador como válido se deberán cumplir dos requisitos de precio, eficiencia y correctitud.
-
-La correctitud se tomará en base a un conjunto de casos de pruebas que incluye los entregados con esta plantilla. En cada caso de prueba la salida de su microproseador por pantalla deberá coincidir con la salida establecida por la línea `#prints <salida>` en el caso de prueba. La salida de su microprocesador es aquella resultante de la ejecución de la instrucción `tty` en el código.
-
-Junto al proyecto se entrega otro script de python `price.py` que permite dado un archivo `circ` calcular un precio del microprocesador. Dicho precio se calcula en base a las componentes utilizadas para la creación del mismo. El precio de un microprocesador para ser aceptado tendrá que tener un precio menor a las `100` unidades.
-
-La eficiencia será medida en base a la cantidad de ciclos del reloj que toma completar un caso de prueba determinado. Este límite estará dado por `x` ciclos del reloj. Esto será establecido para cada caso de prueba. El número exacto para un caso de prueba estará dado por la línea `#limit <cant-iterciones>`. El número exacto no está definido aún para todos los tests pero si será tomado en cuenta a la hora de la evaluación.
-
-### Precisiones Adicionales
-
-Para el correcto funcionamiento de los tests automáticos las componentes `RAM` de `logisim` (no la `RAM` implementada en la plantilla) utilizadas en el `s-mips.circ` deben cumplir ciertas condiciones. Para evitar conflictos, y puesto que tampoco es necesario, queda prohibido utilizar dichas componentes como partes de alguna de las componentes a implementar.
